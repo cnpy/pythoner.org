@@ -23,7 +23,7 @@ body {
   padding-top: 70px;
 }
 
-html, body, .footer{
+html, body, footer{
   background:#f7f7f7; !important;
 }
 
@@ -61,7 +61,7 @@ nav, .navbar, .navbar-default{background:#fff;}
 div.topic-new{background: #f4b5b5;}
 
 /* footer */
-.footer { color: #919191; font-size:12px;font-weight:200;}
+.footer { color: #919191; font-size:12px;font-weight:200;background: #fff; border-top: 1px dashed #E7E7E7;}
 .footer ul > li{margin: 3px 0; padding: 3px 0;}
 .footer .container{padding: 0;}
 
