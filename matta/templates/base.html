@@ -35,8 +35,12 @@
               <div class="col-lg-1 hidden-md hidden-sm hidden-xs"></div>
               <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
                   <a class="navbar-brand navtar-brand-rt navbar-left" href="/">site name</a>
-                  <ul class="nav navbar-nav navbar-right hidden">
-                      {% if request.user.id %}
+                  <ul class="nav navbar-nav navbar-left">
+                      <li><a href="#">发现</a></li>
+                      <li><a href="#">招聘</a></li>
+
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
                           <li class="dropdown">
                               <a id="dLabel" href="#" class="dropdown-toggle" data-toggle="dropdown">
                                   <img src="{{ request.user.avatar }}" class="img-circle" width="24px;">
@@ -48,22 +52,19 @@
                                   <li><a href="/auth/logout">退出帐号</a></li>
                               </ul>
                           </li>
-                      {% else %}
                           <li class="dropdown">
                               <a id="dLabel" href="#" class="dropdown-toggle" data-toggle="dropdown">
                                   登录
                                   <span class="caret"></span>
                               </a>
                               <ul class="dropdown-menu"  aria-labelledby="dLabel" role="menu">
-                                  <li class="dropdown-header">使用第三方账号登录</li>
+                                  <li class="dropdown-header">登陆或者注册</li>
                                   <li class="divider"></li>
                                   <li>
-                                      <a href="/auth/weibo"><img src="http://www.weibo.com/favicon.ico" class="img-circle" width="20px;"> 新浪微博</a>
+                                      <a href="#">x</a>
                                   </li>
                               </ul>
                           </li>
-
-                      {% endif %}
                   </ul>
 
               </div>
@@ -86,27 +87,38 @@
           <div class="row">
               <div class="col-lg-1 hidden-md hidden-sm hidden-xs"></div>
               <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12" >
-                  <ul class="list-unstyled">
-                    <li>&copy; PYTHONER.ORG 2011-2016 ALL RIGHTS RESERVED</li>
-                      <li> sometext<a href="#" target="_blank" class="rt" >some link</a> </li>
-                      <li class="hidden">
-                      <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255569449'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1255569449' type='text/javascript'%3E%3C/script%3E"));</script>
-                      <script type="text/javascript" src="http://tajs.qq.com/stats?sId=49319034" charset="UTF-8"></script>
-                      </li>
-
-                  <!--
-                      <li>
-                          <ul class="list-unstyled list-inline hidden-xs">
-                              <li><a href="http://weibo.com/tyminiblog2010">开发者</a></li>
+                  <div class="row">
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                          <ul class="list-unstyled">
+                              <li class="hidden-xs">PYTHONER.ORG 由以下开源项目强力驱动：<b>Ubuntu · Nginx · Python · Mysql · Django · Bootstrap · Jquery </b></li>
+                              <li>&copy; PYTHONER.ORG 2011-2016 ALL RIGHTS RESERVED</li>
+                              <li></li>
+                              <li></li>
+                              <li>
+                              <li>当前页面已适配移动端，为获得更佳的显示效果，请使用Chrome/Firefox/Safari等现代浏览器 </li>
+                              <li><span class="label label-default">BETA 2.0.0</span>&nbsp;&nbsp;写代码也要按照基本法</li>
                           </ul>
-                      </li>
-                  -->
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">
+                          <ul class="list-unstyled">
+                              <li>
+                                  <b>
+                                  <ul class="list-unstyled list-inline">
+                                      <li><a href="#" target="_blank" class="rt" >关于</a></li>
+                                      <li><a href="#" target="_blank" class="rt" >  ·   </a></li>
+                                      <li><a href="#" target="_blank" class="rt" >源码</a></li>
+                                      <li><a href="#" target="_blank" class="rt" >  ·   </a></li>
+                                      <li><a href="#" target="_blank" class="rt" >链接</a></li>
+                                      <li><a href="#" target="_blank" class="rt" >  ·   </a></li>
+                                      <li><a href="#" target="_blank" class="rt" >VPS</a></li>
+                                  </ul>
+                                  </b>
+                              </li>
+                           </ul>
+                      </div>
 
-                      <li class="hidden-xs"><b>xx</b> 由以下开源项目强力驱动：Ubuntu/Nginx/Python/Mysql/Django/Bootstrap/Jquery
-                              {%  if time_used %} | 渲染用时：{{ time_used }} ms {% endif %}
-                      </li>
-                      <li class="hidden-xs">当前页面已适配移动端，为获得更佳的显示效果，请使用Chrome/Firefox/Safari等现代浏览器</li>
-                  </ul>
+                  </div>
+
               </div>
               <div class="col-lg-1 hidden-md hidden-sm hidden-xs"></div>
           </div><!-- end .row-->
@@ -117,6 +129,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{% static 'ie10-viewport-bug-workaround.js' %}"></script>
+    <!-- 统计代码 -->
+    <div class="hidden">
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255569449'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1255569449' type='text/javascript'%3E%3C/script%3E"));</script>
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=49319034" charset="UTF-8"></script>
+    </div>
   </body>
 </html>
 
