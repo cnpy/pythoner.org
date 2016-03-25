@@ -28,13 +28,12 @@
   </head>
 
   <body>
-
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
           <div class="row">
-              <div class="col-lg-1 col-md-0 hidden-md"></div>
-              <div class="col-lg-10 col-md-12">
+              <div class="col-lg-1 hidden-md hidden-sm hidden-xs"></div>
+              <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
                   <a class="navbar-brand navtar-brand-rt navbar-left" href="/">site name</a>
                   <ul class="nav navbar-nav navbar-right hidden">
                       {% if request.user.id %}
@@ -68,53 +67,51 @@
                   </ul>
 
               </div>
-              <div class="col-lg-1 col-md-0 hidden-md"></div>
+              <div class="col-lg-1 hidden-md hidden-sm hidden-xs"></div>
           </div>
       </div>
     </nav>
 
     <!-- Begin page content -->
     <div class="container">
-    <div class="row">
-      <div class="col-lg-1 col-md-0 hidden-md"></div>
-      <div class="col-md-10 col-lg-12">{% block main %}{% endblock %}</div>
-      <div class="col-lg-1 col-md-0 hidden-md"></div>
+        <div class="row">
+          <div class="col-lg-1 hidden-md hidden-sm hidden-xs"></div>
+          <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">{% block main %}{% endblock %}</div>
+          <div class="col-lg-1 hidden-md hiddeen-sm hidden-xs"></div>
+        </div>
     </div>
 
     <footer class="footer">
       <div class="container">
           <div class="row">
-              <div class="col-lg-1 col-md-0 hidden-md"></div>
-              <div class="col-md-10 col-lg-12">
-              <ul class="list-unstyled">
-                <li>&copy; PYTHONER.ORG 2011-2016 ALL RIGHTS RESERVED</li>
-                  <li> sometext<a href="#" target="_blank" class="rt" >some link</a> </li>
-                  <li class="hidden">
-                  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255569449'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1255569449' type='text/javascript'%3E%3C/script%3E"));</script>
-                  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=49319034" charset="UTF-8"></script>
-                  </li>
+              <div class="col-lg-1 hidden-md hidden-sm hidden-xs"></div>
+              <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12" >
+                  <ul class="list-unstyled">
+                    <li>&copy; PYTHONER.ORG 2011-2016 ALL RIGHTS RESERVED</li>
+                      <li> sometext<a href="#" target="_blank" class="rt" >some link</a> </li>
+                      <li class="hidden">
+                      <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255569449'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1255569449' type='text/javascript'%3E%3C/script%3E"));</script>
+                      <script type="text/javascript" src="http://tajs.qq.com/stats?sId=49319034" charset="UTF-8"></script>
+                      </li>
 
-              <!--
-                  <li>
-                      <ul class="list-unstyled list-inline hidden-xs">
-                          <li><a href="http://weibo.com/tyminiblog2010">开发者</a></li>
-                      </ul>
-                  </li>
-              -->
+                  <!--
+                      <li>
+                          <ul class="list-unstyled list-inline hidden-xs">
+                              <li><a href="http://weibo.com/tyminiblog2010">开发者</a></li>
+                          </ul>
+                      </li>
+                  -->
 
-              <li class="hidden-xs"><b>xx</b> 由以下开源项目强力驱动：Ubuntu/Nginx/Python/Mysql/Django/Bootstrap/Jquery
-                      {%  if time_used %}
-                          | 渲染用时：{{ time_used }} ms
-                      {% endif %}
-              </li>
-                  <li class="hidden-xs">当前页面已适配移动端，为获得更佳的显示效果，请使用Chrome/Firefox/Safari等现代浏览器</li>
-              </ul>
+                      <li class="hidden-xs"><b>xx</b> 由以下开源项目强力驱动：Ubuntu/Nginx/Python/Mysql/Django/Bootstrap/Jquery
+                              {%  if time_used %} | 渲染用时：{{ time_used }} ms {% endif %}
+                      </li>
+                      <li class="hidden-xs">当前页面已适配移动端，为获得更佳的显示效果，请使用Chrome/Firefox/Safari等现代浏览器</li>
+                  </ul>
               </div>
-              <div class="col-lg-1 col-md-0 hidden-md"></div>
-          </div>
-      </div>
+              <div class="col-lg-1 hidden-md hidden-sm hidden-xs"></div>
+          </div><!-- end .row-->
+      </div><!-- end .container -->
     </footer>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
