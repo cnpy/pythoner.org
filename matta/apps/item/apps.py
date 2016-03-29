@@ -1,7 +1,5 @@
-from __future__ import unicode_literals
-
 from django.apps import AppConfig
 
 
 class ItemConfig(AppConfig):
-    name = 'item'
+    name = u'条目'
