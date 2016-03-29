@@ -24,7 +24,7 @@ LINK_STATUS_CHOICES = [
     (2, u'拒绝'),
 ]
 
-class Category(models.Model):
+class LinkCategory(models.Model):
     name = models.CharField('链接类别', max_length=10)
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Category(models.Model):
 
 
 class Link(models.Model):
-    category = models.ForeignKey(Category,verbose_name='类别',null=True,blank=True)
+    category = models.ForeignKey(LinkCategory,verbose_name='类别',null=True,blank=True)
     url = models.URLField('网址',unique=True)
     title = models.CharField('标题',unique=True,max_length=15)
     email = models.EmailField('邮件')
