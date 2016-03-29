@@ -4,6 +4,8 @@
 *.pyc
 *.log
 .idea
+*migrations
+settings/pro.py
 
 george
 others
