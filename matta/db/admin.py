@@ -16,3 +16,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+
+from django.contrib import admin
+from models.accounts import *
+
+
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('screen_name', 'city', 'introduction')
+
+admin.site.register(UserProfile, ProfileAdmin)
