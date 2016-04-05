@@ -24,4 +24,4 @@ from models.accounts import *
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('screen_name', 'city', 'introduction')
 
-admin.site.register(UserProfile, ProfileAdmin)
+#admin.site.register(UserProfile, ProfileAdmin)

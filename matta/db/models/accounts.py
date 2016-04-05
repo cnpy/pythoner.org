@@ -2,12 +2,11 @@
 from datetime import datetime
 from django.contrib.auth.models import User
 from django.db import models
-from matta.apps.accounts.signals import update_user_repulation
+from apps.accounts.signals import update_user_repulation
 from django.contrib import messages
 
-# TODO
-# from matta.utils.logger import logging
-# log = logging.getlogger(__name__)
+from utils.logger import getlogger
+log = getlogger(__name__)
 
 
 class UserProfile(models.Model):
@@ -16,7 +15,7 @@ class UserProfile(models.Model):
     """
     user = models.ForeignKey(User, unique=True)
     screen_name = models.CharField('昵称', max_length=10, blank=False, null=False, help_text='长度为1~10个字符')
-    score = models.PositiveIntegerField('积分', max_length=5, default=0)
+    score = models.PositiveIntegerField('积分',  default=0)
     deleted = models.BooleanField('删除', default=False)
 
     photo = models.ImageField('头像', upload_to='user', blank=True)

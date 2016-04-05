@@ -26,11 +26,12 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.models import User
 from django.template import loader
 from forms import *
-from models import UserProfile
+from db.models import UserProfile
+
 # TODO
-# from settings import DOMAIN
-# from accounts.signals import new_user_register
-# from main.email.views import send_email
+from settings import DOMAIN
+from db.signals.account_signals import new_user_register
+from utils.email import send_email
 import hashlib
 
 TURN_OFF = False

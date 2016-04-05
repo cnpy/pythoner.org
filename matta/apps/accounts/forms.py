@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 from django import forms
-from models import UserProfile
+from db.models import UserProfile
 
 class RegisterForm(forms.Form):
     """

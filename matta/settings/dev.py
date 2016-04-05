@@ -19,3 +19,5 @@ DATABASES = {
     }
 }
 
+
+DOMAIN = 'localhost:8000'

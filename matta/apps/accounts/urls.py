@@ -18,22 +18,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 from django.conf.urls import url
-import views as accounts_views
-import sina
+import apps.accounts.views as accounts_views
 
 urlpatterns = [
     url('^login/$', accounts_views.login),
-
-    url('^login/sina/$', sina.index),
-    url(r'login/sina/callback/$', sina.callback),
-
-    #('^login/douban/$','douban.index'),
-    #(r'login/douban/callback/$','douban.callback'),
-
-    #('^login/twitter/$','twitter.index'),
-    #(r'login/twitter/callback/$','twitter.callback'),
-
     url('^logout/$', accounts_views.logout),
+    # 先不考虑第三方账号的登陆
+
     url('^register/$', accounts_views.register),
     url(r'^active/(\d{1,10})/(.*)/$', accounts_views.active),
 ]

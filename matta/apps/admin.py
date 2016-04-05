@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 from django.contrib import admin
-from matta.db.models.accounts import UserProfile
+from db.models.accounts import UserProfile
 
 
 class ProfileAdmin(admin.ModelAdmin):
