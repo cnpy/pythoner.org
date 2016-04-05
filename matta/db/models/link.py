@@ -1,4 +1,4 @@
-#encoding:utf-8
+# encoding:utf-8
 """
 Copyright (C) 2016  PYTHONER.ORG
 
@@ -24,6 +24,7 @@ LINK_STATUS_CHOICES = [
     (2, u'拒绝'),
 ]
 
+
 class LinkCategory(models.Model):
     name = models.CharField('链接类别', max_length=10)
 
@@ -32,30 +33,30 @@ class LinkCategory(models.Model):
 
     def __unicode__(self):
         return self.name
-   
+
     class Meta:
         verbose_name_plural = '链接分类'
 
 
 class Link(models.Model):
-    category = models.ForeignKey(LinkCategory,verbose_name='类别',null=True,blank=True)
-    url = models.URLField('网址',unique=True)
-    title = models.CharField('标题',unique=True,max_length=15)
+    category = models.ForeignKey(LinkCategory, verbose_name='类别', null=True, blank=True)
+    url = models.URLField('网址', unique=True)
+    title = models.CharField('标题', unique=True, max_length=15)
     email = models.EmailField('邮件')
-    remark = models.CharField('说明',max_length=100)
-    status = models.IntegerField(u'状态', default=0, choices = LINK_STATUS_CHOICES)
-    created_at = models.DateTimeField('时间',auto_now_add=True)
+    remark = models.CharField('说明', max_length=100)
+    status = models.IntegerField(u'状态', default=0, choices=LINK_STATUS_CHOICES)
+    created_at = models.DateTimeField('时间', auto_now_add=True)
 
     def get_absolute_url(self):
         return self.url
 
-    class Meta: 
-        ordering = ['status','-id']
-        verbose_name= '链接'
+    class Meta:
+        ordering = ['status', '-id']
+        verbose_name = '链接'
         verbose_name_plural = verbose_name
 
     def __unicode__(self):
         if self.display:
-            return u'[%s] %s:%s' %(self.category.name,self.title,self.url)
+            return u'[%s] %s:%s' % (self.category.name, self.title, self.url)
         else:
-            return u'[待审核]%s:%s' %(self.title,self.url)
+            return u'[待审核]%s:%s' % (self.title, self.url)
